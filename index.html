@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C Programming 3-Week Mastery Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background orbs for glassmorphism blur effect -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Mobile header -->
+  <header class="mobile-header" id="mobile-header">
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="mobile-title">C Mastery</span>
+  </header>
+
+  <!-- Sidebar navigation -->
+  <nav class="sidebar glass" id="sidebar">
+    <div class="sidebar-brand">
+      <h1>C Mastery</h1>
+      <span class="sidebar-tag">3-Week Tracker</span>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#dashboard" class="nav-item active" data-page="dashboard">
+        <span class="nav-dot"></span>Dashboard
+      </a></li>
+      <li><a href="#week1" class="nav-item" data-page="week1">
+        <span class="nav-num">01</span>Week 1
+        <span class="nav-sub">Fundamentals</span>
+      </a></li>
+      <li><a href="#week2" class="nav-item" data-page="week2">
+        <span class="nav-num">02</span>Week 2
+        <span class="nav-sub">Core Concepts</span>
+      </a></li>
+      <li><a href="#week3" class="nav-item" data-page="week3">
+        <span class="nav-num">03</span>Week 3
+        <span class="nav-sub">Advanced</span>
+      </a></li>
+      <li><a href="#projects" class="nav-item" data-page="projects">
+        <span class="nav-dot"></span>Projects
+      </a></li>
+      <li><a href="#notes" class="nav-item" data-page="notes">
+        <span class="nav-dot"></span>Notes
+      </a></li>
+      <li><a href="#readiness" class="nav-item" data-page="readiness">
+        <span class="nav-dot"></span>Readiness
+      </a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" id="theme-icon">☀</span>
+        <span id="theme-label">Light Mode</span>
+      </button>
+      <button class="btn-reset" id="reset-btn">Reset All Progress</button>
+    </div>
+  </nav>
+
+  <!-- Mobile sidebar backdrop -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Main content area -->
+  <main class="main-content" id="main-content">
+
+    <!-- ========== DASHBOARD ========== -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <p>Your C programming journey at a glance</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card glass">
+          <span class="stat-number" id="total-tasks">24</span>
+          <span class="stat-label">Total Tasks</span>
+        </div>
+        <div class="stat-card glass">
+          <span class="stat-number accent" id="completed-tasks">0</span>
+          <span class="stat-label">Completed</span>
+        </div>
+        <div class="stat-card glass">
+          <span class="stat-number" id="pending-tasks">24</span>
+          <span class="stat-label">Pending</span>
+        </div>
+      </div>
+
+      <div class="progress-card glass">
+        <h3>Overall Progress</h3>
+        <div class="progress-visual">
+          <div class="circular-progress">
+            <svg viewBox="0 0 200 200">
+              <circle class="progress-bg" cx="100" cy="100" r="85" />
+              <circle class="progress-fill" id="progress-ring-fill" cx="100" cy="100" r="85" />
+            </svg>
+            <span class="progress-pct" id="progress-percentage">0%</span>
+          </div>
+          <div class="progress-details">
+            <div class="linear-bar">
+              <div class="linear-fill" id="linear-progress-fill"></div>
+            </div>
+            <p class="progress-hint">Complete all 24 topics + 3 projects to master C</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-card glass">
+        <span class="focus-label">Today's Focus</span>
+        <h3 id="focus-title">Welcome &amp; Setup</h3>
+        <p id="focus-message" class="focus-msg">Start your journey — every expert was once a beginner.</p>
+        <span id="focus-week-day" class="focus-meta">Week 1 · Day 1</span>
+      </div>
+    </div>
+
+    <!-- ========== WEEK 1 ========== -->
+    <div class="page" id="page-week1">
+      <div class="page-header">
+        <h1>Week 1</h1>
+        <p>C Fundamentals — build a solid base</p>
+      </div>
+      <div class="week-progress glass">
+        <div class="week-progress-info">
+          <span>Progress</span>
+          <span id="week-1-badge" class="badge">0 / 8</span>
+        </div>
+        <div class="linear-bar">
+          <div class="linear-fill" id="week-1-linear"></div>
+        </div>
+      </div>
+      <div class="task-card glass">
+        <ul class="task-list" id="week-1-tasks"></ul>
+      </div>
+    </div>
+
+    <!-- ========== WEEK 2 ========== -->
+    <div class="page" id="page-week2">
+      <div class="page-header">
+        <h1>Week 2</h1>
+        <p>Core C Concepts — pointers, arrays, recursion</p>
+      </div>
+      <div class="week-progress glass">
+        <div class="week-progress-info">
+          <span>Progress</span>
+          <span id="week-2-badge" class="badge">0 / 8</span>
+        </div>
+        <div class="linear-bar">
+          <div class="linear-fill" id="week-2-linear"></div>
+        </div>
+      </div>
+      <div class="task-card glass">
+        <ul class="task-list" id="week-2-tasks"></ul>
+      </div>
+    </div>
+
+    <!-- ========== WEEK 3 ========== -->
+    <div class="page" id="page-week3">
+      <div class="page-header">
+        <h1>Week 3</h1>
+        <p>Advanced C + Projects — put it all together</p>
+      </div>
+      <div class="week-progress glass">
+        <div class="week-progress-info">
+          <span>Progress</span>
+          <span id="week-3-badge" class="badge">0 / 8</span>
+        </div>
+        <div class="linear-bar">
+          <div class="linear-fill" id="week-3-linear"></div>
+        </div>
+      </div>
+      <div class="task-card glass">
+        <ul class="task-list" id="week-3-tasks"></ul>
+      </div>
+    </div>
+
+    <!-- ========== PROJECTS ========== -->
+    <div class="page" id="page-projects">
+      <div class="page-header">
+        <h1>Projects</h1>
+        <p>Apply your knowledge with real-world applications</p>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+
+    <!-- ========== NOTES ========== -->
+    <div class="page" id="page-notes">
+      <div class="page-header">
+        <h1>Notes</h1>
+        <p>Capture your thoughts and key learnings</p>
+      </div>
+      <div class="notes-card glass">
+        <textarea id="notes-editor" placeholder="Write your daily learning notes here..." rows="10"></textarea>
+        <div class="notes-actions">
+          <button class="btn-glass btn-accent" id="save-notes-btn">Save Notes</button>
+          <button class="btn-glass" id="clear-notes-btn">Clear</button>
+        </div>
+        <span class="notes-status" id="notes-status"></span>
+      </div>
+    </div>
+
+    <!-- ========== READINESS ========== -->
+    <div class="page" id="page-readiness">
+      <div class="page-header">
+        <h1>Readiness Score</h1>
+        <p>How prepared are you for the real world?</p>
+      </div>
+      <div class="readiness-card glass">
+        <div class="score-display">
+          <span class="score-num" id="readiness-score">0</span>
+          <span class="score-max">/ 100</span>
+        </div>
+        <div class="linear-bar large">
+          <div class="linear-fill" id="readiness-bar-fill"></div>
+        </div>
+        <p class="readiness-msg" id="readiness-message">Start tracking your progress to see your readiness score.</p>
+        <div class="score-breakdown">
+          <div class="breakdown-item glass">
+            <span class="breakdown-label">Tasks</span>
+            <span class="breakdown-value" id="task-score">0%</span>
+            <span class="breakdown-weight">weight 70%</span>
+          </div>
+          <div class="breakdown-item glass">
+            <span class="breakdown-label">Projects</span>
+            <span class="breakdown-value" id="project-score">0%</span>
+            <span class="breakdown-weight">weight 30%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
